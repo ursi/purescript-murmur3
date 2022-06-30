@@ -1,7 +1,6 @@
 { murmur, p }:
 { ps-pkgs, ps-pkgs-ns, ... }:
-  with ps-pkgs;
-  { dependencies = [ functions prelude ];
+  { dependencies = with ps-pkgs; [ functions prelude ];
 
     foreign =
       { Murmur3 =
