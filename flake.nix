@@ -18,7 +18,17 @@
            p = pkgs;
            inherit (purs-nix) ps-pkgs;
            package = import ./package.nix { inherit murmur p; } purs-nix;
-           ps = purs-nix.purs package;
+
+           ps =
+             purs-nix.purs
+               (package
+                // { test-dependencies =
+                       let inherit (purs-nix.ps-pkgs-ns) ursi; in
+                       [ ursi.prelude
+                         ps-pkgs."assert"
+                       ];
+                   }
+               );
          in
          { packages.default =
              purs-nix.build
