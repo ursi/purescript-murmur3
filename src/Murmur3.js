@@ -1,3 +1,3 @@
-import { murmur3 }  from "./purs-nix.js"
+import { murmurhash3_32_gc }  from "./foreign/murmur3.js"
 
-export const hashImpl = murmur3.murmurhash3_32_gc
+export const hashImpl = murmurhash3_32_gc
