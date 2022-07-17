@@ -7,7 +7,7 @@
         };
 
       nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-      purs-nix.url = "github:ursi/purs-nix/foreign-dependencies";
+      purs-nix.url = "github:ursi/purs-nix/ps-0.15";
       utils.url = "github:ursi/flake-utils/8";
     };
 
